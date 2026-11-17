@@ -1,0 +1,629 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="東京都板橋区の本町カフェを紹介する非公式デザイン提案サイトです。">
+<title>本町カフェ | 非公式デザイン提案</title>
+
+<style>
+:root {
+  --green: #344b3b;
+  --light: #f8f6f0;
+  --cream: #eae8dd;
+  --gold: #b69b69;
+  --ink: #303a32;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--light);
+  font-family: "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.9;
+}
+a { color: inherit; }
+.notice {
+  background: #e9dfc9;
+  padding: 9px 16px;
+  text-align: center;
+  font-size: 11px;
+}
+header {
+  background: rgba(248,246,240,.97);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid #e6e3d9;
+}
+.nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 17px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.logo {
+  font-family: Georgia, serif;
+  font-size: 23px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-decoration: none;
+}
+nav { display: flex; gap: 25px; }
+nav a {
+  font-size: 12px;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+nav a:hover { color: #9a8058; }
+.hero {
+  min-height: 78vh;
+  
+background:
+  linear-gradient(
+    rgba(20, 35, 25, 0.50),
+    rgba(20, 35, 25, 0.60)
+  ),
+  url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1800&q=85")
+  center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero:before {
+  content: "✦";
+  position: absolute;
+  font-size: 380px;
+  color: rgba(255,255,255,.035);
+  right: -50px;
+  top: -150px;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 5px;
+  color: var(--gold);
+  font-weight: bold;
+}
+.hero .eyebrow { color: #e4d2a9; }
+.hero h1 {
+  font-size: clamp(46px,8vw,90px);
+  font-weight: 400;
+  letter-spacing: .14em;
+  margin: 15px 0;
+  font-family: Georgia,"Yu Mincho",serif;
+}
+.hero p {
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+.hero-line {
+  width: 55px;
+  height: 1px;
+  background: var(--gold);
+  margin: 32px auto;
+}
+.btn {
+  display: inline-block;
+  padding: 13px 35px;
+  margin-top: 20px;
+  border: 1px solid currentColor;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 2px;
+  transition: .2s;
+}
+.btn:hover {
+  background: white;
+  color: var(--green);
+}
+section {
+  padding: 95px 24px;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-head h2 {
+  font-family: Georgia,serif;
+  font-size: clamp(30px,5vw,44px);
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin: 5px 0;
+}
+.section-head p {
+  font-size: 13px;
+  color: #777;
+}
+.story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 65px;
+  align-items: center;
+}
+.visual {
+  min-height: 420px;
+  background:
+    radial-gradient(circle at 55% 30%,
+      #b8c5a2 0%,transparent 35%),
+    linear-gradient(140deg,#d5ddc8,#8fa18a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.visual-inner {
+  border: 1px solid rgba(255,255,255,.7);
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.visual-inner .symbol {
+  font-size: 80px;
+  font-family: Georgia,serif;
+}
+.story h3 {
+  font-family: "Yu Mincho",serif;
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 1.8;
+}
+.story p {
+  font-size: 14px;
+  color: #666;
+}
+.features {
+  background: var(--cream);
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 24px;
+}
+.card {
+  background: white;
+  padding: 42px 27px;
+  text-align: center;
+  border-bottom: 3px solid var(--gold);
+}
+.card .number {
+  font-family: Georgia,serif;
+  font-size: 30px;
+  color: var(--gold);
+}
+.card h3 {
+  font-size: 17px;
+  margin: 18px 0;
+}
+.card p {
+  font-size: 13px;
+  color: #666;
+}
+.menu-list {
+  max-width: 760px;
+  margin: auto;
+}
+.menu-item {
+  padding: 24px 0;
+  border-bottom: 1px solid #dcd8ce;
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+}
+.menu-item strong { font-size: 16px; }
+.menu-item span {
+  font-size: 12px;
+  color: #888;
+}
+.menu-note {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  margin-top: 30px;
+}
+.access {
+  background: var(--green);
+  color: white;
+}
+.access .section-head p { color: #d6d9d0; }
+.access-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+.info-row {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.info-row small {
+  display: block;
+  color: #d3d8cf;
+  letter-spacing: 2px;
+}
+.info-row p { margin: 5px 0; }
+.map-box {
+  min-height: 310px;
+  background: #e5e5d9;
+  color: var(--green);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+}
+.map-box a {
+  display: inline-block;
+  background: var(--green);
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  margin-top: 15px;
+  font-size: 13px;
+}
+.map-box a:hover { background: #58745d; }
+.small {
+  font-size: 11px;
+  opacity: .8;
+}
+footer {
+  background: #25382b;
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
+}
+footer p { font-size: 12px; }
+footer .logo { font-size: 27px; }
+
+@media(max-width:750px) {
+  .nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+  nav {
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .hero { min-height: 65vh; }
+  .hero h1 { letter-spacing: .06em; }
+  section { padding: 65px 20px; }
+  .story,.access-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .cards { grid-template-columns: 1fr; }
+  .visual { min-height: 300px; }
+  .visual-inner { min-height: 250px; }
+}
+
+/* 写真付きメニューデザイン */
+.menu-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-7px);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.menu-card-body {
+  padding: 25px;
+}
+
+.menu-card-body h3 {
+  font-size: 19px;
+  margin: 0 0 10px;
+}
+
+.menu-card-body p {
+  font-size: 13px;
+  color: #666;
+}
+
+.menu-card-body span {
+  font-size: 12px;
+  color: #9a8058;
+}
+
+@media (max-width: 750px) {
+  .menu-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* スマホ表示の調整 */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 580px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 9vw, 48px);
+    letter-spacing: 0.08em;
+  }
+
+  .hero-content {
+    padding: 45px 20px;
+  }
+
+  .hero a {
+    display: inline-block;
+    padding: 14px 30px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="notice">
+  非公式デザイン提案サンプル｜
+  店舗運営者による承認・監修は受けていません
+</div>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="#">HONMACHI CAFE</a>
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#features">FEATURES</a>
+      <a href="#menu">MENU</a>
+      <a href="#access">ACCESS</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="eyebrow">
+      A LITTLE HIDEAWAY IN ITABASHI
+    </div>
+    <h1>本町カフェ</h1>
+    <div class="hero-line"></div>
+    <p>緑に囲まれた、街の小さな隠れ家。</p>
+    <a class="btn" href="#about">
+      お店について
+    </a>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container story">
+    
+<div class="visual">
+  <img
+    src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1200&q=85"
+    alt="カフェのイメージ写真"
+    style="width:100%;height:420px;object-fit:cover;display:block;">
+</div>
+
+    <div>
+      <div class="eyebrow">OUR STORY</div>
+      <h3>
+        扉の向こうに広がる、<br>
+        緑とくつろぎの空間。
+      </h3>
+      <p>
+        東京都板橋区本町。
+        商店街沿いの建物の2階にある本町カフェ。
+      </p>
+      <p>
+        店内には観葉植物が並び、
+        靴を脱いでスリッパに履き替える
+        くつろぎのスタイルが特徴です。
+      </p>
+      <p>
+        2023年5月にオープンした、
+        地域に根ざしたカフェです。
+      </p>
+      <p class="small">
+        ※公開された店舗紹介記事を参考にした
+        非公式の紹介文です。
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">THE EXPERIENCE</div>
+      <h2>FEATURES</h2>
+      <p>本町カフェの魅力</p>
+    </div>
+    <div class="cards">
+      <article class="card">
+        <div class="number">01</div>
+        <h3>緑に囲まれた店内</h3>
+        <p>
+          観葉植物が並ぶ、
+          落ち着いた雰囲気の空間。
+        </p>
+      </article>
+      <article class="card">
+        <div class="number">02</div>
+        <h3>サイフォンコーヒー</h3>
+        <p>
+          店舗紹介や口コミでも
+          取り上げられているコーヒー。
+        </p>
+      </article>
+      <article class="card">
+        <div class="number">03</div>
+        <h3>カフェランチ</h3>
+        <p>
+          パスタやカレーなどの
+          食事メニューも紹介されています。
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<section id="menu">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">FOOD & DRINK</div>
+      <h2>OUR MENU</h2>
+      <p>コーヒーとお食事を楽しむひととき</p>
+    </div>
+
+    <div class="menu-gallery">
+
+      <div class="menu-card">
+        <img
+          src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=900"
+          alt="コーヒーのイメージ写真">
+        <div class="menu-card-body">
+          <h3>サイフォンコーヒー</h3>
+          <p>香り豊かなコーヒータイム。</p>
+          <span>価格・提供状況は要確認</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img
+          src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=900"
+          alt="パスタのイメージ写真">
+        <div class="menu-card-body">
+          <h3>ボロネーゼ</h3>
+          <p>カフェで楽しむお食事。</p>
+          <span>価格・提供状況は要確認</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img
+          src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=900"
+          alt="料理のイメージ写真">
+        <div class="menu-card-body">
+          <h3>ドライカレー</h3>
+          <p>ランチタイムのひと皿。</p>
+          <span>価格・提供状況は要確認</span>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="menu-note">
+      ※掲載写真はイメージです。実際の商品とは異なります。
+      メニューは過去の紹介情報を参考にしています。
+    </p>
+  </div>
+</section>
+
+
+<section class="access" id="access">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">VISIT US</div>
+      <h2>ACCESS</h2>
+      <p>店舗所在地・アクセス</p>
+    </div>
+
+    <div class="access-grid">
+      <div>
+        <div class="info-row">
+          <small>NAME</small>
+          <p>本町カフェ</p>
+        </div>
+        <div class="info-row">
+          <small>ADDRESS</small>
+          <p>東京都板橋区本町26-3 2F</p>
+        </div>
+        <div class="info-row">
+          <small>STATION</small>
+          <p>都営三田線 板橋本町駅から約425m</p>
+        </div>
+        <div class="info-row">
+          <small>HOURS</small>
+          <p>水〜土 11:00〜15:00</p>
+          <p class="small">
+            ※第三者掲載情報。最新の営業時間は要確認
+          </p>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <div style="font-size:38px">⌖</div>
+        <h3>FIND US</h3>
+        <p>東京都板橋区本町26-3 2F</p>
+        <a
+          href="https://www.google.com/maps/search/?api=1&amp;query=%E6%9C%AC%E7%94%BA%E3%82%AB%E3%83%95%E3%82%A7%20%E6%9D%BF%E6%A9%8B%E5%8C%BA"
+          target="_blank"
+          rel="noopener noreferrer">
+          GOOGLE MAPSで場所を見る
+        </a>
+        <p class="small">
+          外部のGoogleマップが開きます
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="logo">HONMACHI CAFE</div>
+  <p>本町カフェ｜東京都板橋区本町</p>
+  <p>
+    非公式・未承認の営業用デザイン提案サンプル
+  </p>
+  <p>
+    掲載情報は店舗による確認前のものです。
+  </p>
+  <p>© 2026 Website Design Proposal</p>
+</footer>
+
+</body>
+</html>
